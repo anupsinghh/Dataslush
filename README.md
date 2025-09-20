@@ -23,7 +23,31 @@ npx serve .
 # Or just double-click index.html
 ```
 
-### 3. Add Your GTM Container
+### 3. Deploy to Vercel (Recommended)
+
+1. **Push to GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: Web analytics demo"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/your-repo-name.git
+   git push -u origin main
+   ```
+
+2. **Deploy with Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign in with GitHub
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect it's a static site
+   - Click "Deploy"
+
+3. **Get Your Live URL**
+   - After deployment, you'll get a URL like: `https://your-project.vercel.app`
+   - Use this URL in your GTM and GA4 configuration
+
+### 4. Add Your GTM Container
 
 1. **Get your GTM container ID** from your Google Tag Manager account
 2. **Replace the GTM placeholders** in `index.html`:
@@ -78,7 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 3. **Configure Data Stream**
    - Choose "Web" platform
-   - Website URL: `http://localhost:8000` (or your domain)
+   - Website URL: `https://your-project.vercel.app` (your Vercel URL)
    - Stream name: `Web Analytics Demo Stream`
 
 4. **Get Measurement ID**
@@ -171,7 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 1. **Enable Preview Mode**
    - In GTM, click "Preview"
-   - Enter your website URL: `http://localhost:8000`
+   - Enter your website URL: `https://your-project.vercel.app`
    - Click "Connect"
 
 2. **Test Navigation Clicks**
@@ -188,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 1. **Enable Debug Mode**
    - In GA4, go to Configure → DebugView
-   - Add `?gtm_debug=1` to your URL: `http://localhost:8000?gtm_debug=1`
+   - Add `?gtm_debug=1` to your URL: `https://your-project.vercel.app?gtm_debug=1`
 
 2. **Monitor Real-time Events**
    - Navigate and scroll on your page
@@ -275,8 +299,8 @@ In GA4, create custom dimensions:
 ### Step 8: Production Deployment
 
 1. **Update GTM Container**
-   - Replace localhost URL with production domain
-   - Update GA4 data stream with production URL
+   - Replace localhost URL with your Vercel domain
+   - Update GA4 data stream with your Vercel URL
 
 2. **Test in Production**
    - Use GTM Preview mode on live site
@@ -442,5 +466,6 @@ This is a starter template. Feel free to extend it with:
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
-#   D a t a s l u s h  
+#   D a t a s l u s h 
+ 
  
