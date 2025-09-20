@@ -6,6 +6,10 @@
 // Initialize dataLayer if it doesn't exist
 window.dataLayer = window.dataLayer || [];
 
+// Debug: Log GTM status
+console.log('GTM Container ID: GTM-N4CHKH32');
+console.log('DataLayer initialized:', window.dataLayer);
+
 /**
  * Navigation Click Tracking
  * Tracks when users click on navigation links
